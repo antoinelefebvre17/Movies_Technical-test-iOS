@@ -12,8 +12,11 @@ struct MoviesList: View {
     @ObservedObject var moviesTMDB = MoviesFromAPI()
     
     var body: some View {
-        List(moviesTMDB) { (movies: Movie) in
-            Text(movies.overview)
+        List(moviesTMDB) { (movie: Movie) in
+            Text(movie.original_title)
+                .onAppear() {
+                    self.moviesTMDB.checkMoreData(movie: movie)
+            }
         }
     }
 }
