@@ -16,6 +16,7 @@
 		6FCC341924825D5200112FEB /* CallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC341824825D5200112FEB /* CallAPI.swift */; };
 		6FCC34232482662000112FEB /* Moment_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC34222482662000112FEB /* Moment_iOSTests.swift */; };
 		6FCC342D2482964D00112FEB /* MoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC342C2482964D00112FEB /* MoviesList.swift */; };
+		6FCC342F2482B6D900112FEB /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC342E2482B6D900112FEB /* MovieDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		6FCC34222482662000112FEB /* Moment_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moment_iOSTests.swift; sourceTree = "<group>"; };
 		6FCC34242482662000112FEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FCC342C2482964D00112FEB /* MoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesList.swift; sourceTree = "<group>"; };
+		6FCC342E2482B6D900112FEB /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				6FCC342C2482964D00112FEB /* MoviesList.swift */,
+				6FCC342E2482B6D900112FEB /* MovieDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				6FCC3404248252D700112FEB /* AppDelegate.swift in Sources */,
 				6FCC3406248252D700112FEB /* SceneDelegate.swift in Sources */,
 				6FCC341924825D5200112FEB /* CallAPI.swift in Sources */,
+				6FCC342F2482B6D900112FEB /* MovieDetail.swift in Sources */,
 				6FCC342D2482964D00112FEB /* MoviesList.swift in Sources */,
 				6FCC3408248252D700112FEB /* ContentView.swift in Sources */,
 			);

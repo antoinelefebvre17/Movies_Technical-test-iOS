@@ -12,11 +12,16 @@ struct MoviesList: View {
     @ObservedObject var moviesTMDB = MoviesFromAPI()
     
     var body: some View {
-        List(moviesTMDB) { (movie: Movie) in
-            Text(movie.original_title)
+        NavigationView {
+            List(moviesTMDB) { (movie: Movie) in
+                NavigationLink(destination: MovieDetail(movie: movie)) {
+                    Text(movie.original_title)
+                }
                 .onAppear() {
                     self.moviesTMDB.checkMoreData(movie: movie)
+                }
             }
+            .navigationBarTitle(Text("Moment"))
         }
     }
 }
