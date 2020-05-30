@@ -11,14 +11,24 @@ import SwiftUI
 struct MoviesList: View {
     @ObservedObject var moviesTMDB = MoviesFromAPI()
     
+    init() {
+        UITableView.appearance().separatorColor = .clear
+    }
+    
     var body: some View {
         NavigationView {
-            List(moviesTMDB) { (movie: Movie) in
-                NavigationLink(destination: MovieDetail(movie: movie)) {
-                    Text(movie.original_title)
-                }
-                .onAppear() {
-                    self.moviesTMDB.checkMoreData(movie: movie)
+            List {
+                ForEach(moviesTMDB) { (movie: Movie) in
+                    ZStack {
+                        MoviesListItem(movie: movie)
+                            .onAppear() {
+                                self.moviesTMDB.checkMoreData(movie: movie)
+                        }
+                        NavigationLink(destination: MovieDetail(movie: movie)) {
+                            EmptyView()
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
                 }
             }
             .navigationBarTitle(Text("Moment"))

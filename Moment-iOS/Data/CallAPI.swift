@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-class Movie: Identifiable, Codable {
+class Movie: Codable, Identifiable { //Identifiable ? class ? //Codable
     var id: Int
     var popularity: Double
     var poster_path: String?
@@ -16,6 +17,16 @@ class Movie: Identifiable, Codable {
     var genre_ids: [Int]
     var overview: String
     var release_date: String
+    
+    init(id: Int, popularity: Double, poster_path: String?, original_title: String, genre_ids: [Int], overview: String, release_date: String) {
+        self.id = id
+        self.popularity = popularity
+        self.poster_path = poster_path
+        self.original_title = original_title
+        self.genre_ids = genre_ids
+        self.overview = overview
+        self.release_date = release_date
+    }
 }
 
 class MoviesResultAPI: Codable {
