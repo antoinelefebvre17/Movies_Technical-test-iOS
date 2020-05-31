@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MoviesList: View {
     @ObservedObject var moviesTMDB = MoviesFromAPI()
+    let genresTMDB = CallAPIGenres()
     
     init() {
         UITableView.appearance().separatorColor = .clear
@@ -20,7 +21,7 @@ struct MoviesList: View {
             List {
                 ForEach(moviesTMDB) { (movie: Movie) in
                     ZStack {
-                        MoviesListItem(movie: movie)
+                        MoviesListItem(movie: movie, genres: self.genresTMDB)
                             .onAppear() {
                                 self.moviesTMDB.checkMoreData(movie: movie)
                         }
