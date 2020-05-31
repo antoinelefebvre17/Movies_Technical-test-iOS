@@ -20,9 +20,9 @@ class Moment_iOSTests: XCTestCase {
     }
     
     func testExample() throws {
-        let test = MoviesFromAPI()
+        let test = DataMovies()
         
-        test.loadDataFromAPI()
+        test.loadMooviesFromAPI()
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

@@ -11,7 +11,7 @@ import KingfisherSwiftUI
 
 struct MoviesListItem: View {
     let movie: Movie
-    let genres: CallAPIGenres
+    let genres: DataGenres
 
     var body: some View {
         HStack(spacing: 0) {
@@ -28,7 +28,7 @@ struct MoviesListItem: View {
                     .font(.headline)
                 HStack {
                     ForEach(movie.genre_ids, id: \.self) { genres in
-                        Text("\(self.genres.returnNameGenres(id: genres))")
+                        Text("\(self.genres.returnNameGenreById(id: genres))")
                             .font(.system(size: 12, weight: .regular))
                             .lineLimit(2)
                             .foregroundColor(.white)

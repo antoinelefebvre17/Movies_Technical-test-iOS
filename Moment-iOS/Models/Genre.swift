@@ -1,5 +1,5 @@
 //
-//  ManageData.swift
+//  Genre.swift
 //  Moment-iOS
 //
 //  Created by Antoine Lefebvre on 31/05/2020.
@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct Genre: Codable, Identifiable {
+    var id: Int
+    var name: String
+}
+
+struct Genres: Codable {
+    var genres: [Genre]
+}

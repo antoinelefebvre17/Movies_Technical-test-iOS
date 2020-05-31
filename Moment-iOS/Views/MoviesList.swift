@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct MoviesList: View {
-    @ObservedObject var moviesTMDB = MoviesFromAPI()
-    let genresTMDB = CallAPIGenres()
+    @ObservedObject var movies = DataMovies()
+    let genres = DataGenres()
     
     init() {
         UITableView.appearance().separatorColor = .clear
@@ -19,11 +19,11 @@ struct MoviesList: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(moviesTMDB) { (movie: Movie) in
+                ForEach(movies) { (movie: Movie) in
                     ZStack {
-                        MoviesListItem(movie: movie, genres: self.genresTMDB)
+                        MoviesListItem(movie: movie, genres: self.genres)
                             .onAppear() {
-                                self.moviesTMDB.checkMoreData(movie: movie)
+                                self.movies.checkMoreMoviesToLoad(movie: movie)
                         }
                         NavigationLink(destination: MovieDetail(movie: movie)) {
                             EmptyView()
