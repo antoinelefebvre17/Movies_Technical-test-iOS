@@ -11,41 +11,39 @@ import KingfisherSwiftUI
 
 struct MoviesListItem: View {
     let movie: Movie
-    let genres: DataGenres
-
+    
     var body: some View {
-        HStack(spacing: 0) {
-            KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(movie.poster_path ?? "test")")!) // a modifier
-                .resizable()
-                .cornerRadius(10)
-                .scaledToFit()
-                .frame(width: 100.0,height:100)
-                .shadow(radius: 10)
-            
-            VStack(alignment: .leading) {
-                Text(movie.original_title)
-                    .padding(.horizontal)
-                    .font(.headline)
-                HStack {
-                    ForEach(movie.genre_ids, id: \.self) { genres in
-                        Text("\(self.genres.returnNameGenreById(id: genres))")
-                            .font(.system(size: 12, weight: .regular))
-                            .lineLimit(2)
-                            .foregroundColor(.white)
-                            .padding(5)
-                            .background(Color.green)
-                            .cornerRadius(5)
-                    }
-                }
-                .onAppear(){
+        ZStack {
+            HStack(spacing: 0) {
+                KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(movie.poster_path ?? "test")")!) // a modifier
+                    .resizable()
+                    .cornerRadius(10)
+                    .scaledToFit()
+                    .frame(width: 100.0,height:100)
+                    .shadow(radius: 10)
+                
+                VStack(alignment: .leading) {
+                    Text(movie.original_title)
+                        .padding(.horizontal)
+                        .font(.headline)
+                    //                HStack {
+                    //                    ForEach(movie.genre_ids, id: \.self) { genres in
+                    //                        Text("\(self.genres.returnNameGenreById(id: genres))")
+                    //                            .font(.system(size: 12, weight: .regular))
+                    //                            .lineLimit(2)
+                    //                            .foregroundColor(.white)
+                    //                            .padding(5)
+                    //                            .background(Color.green)
+                    //                            .cornerRadius(5)
+                    //                    }
+                    //                }
+                    //                .padding(.horizontal)
+                    Spacer()
                     
                 }
-                .padding(.horizontal)
+                .padding(.top)
                 Spacer()
-                
             }
-            .padding(.top)
-            Spacer()
         }
     }
 }

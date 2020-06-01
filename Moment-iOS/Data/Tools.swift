@@ -17,7 +17,6 @@ class Tools {
             print("Error parsing the JSON: \(error)")
             return nil
         }
-        print(resultAPI)
         return resultAPI
     }
 }

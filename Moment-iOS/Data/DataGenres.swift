@@ -8,8 +8,8 @@
 
 import Foundation
 
-class DataGenres {
-    var genres = [Genre]()
+class DataGenres: ObservableObject {
+    @Published var genres = [Genre]()
     
     init() {
         loadGenresFromAPI()

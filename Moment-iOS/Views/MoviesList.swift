@@ -9,32 +9,30 @@
 import SwiftUI
 
 struct MoviesList: View {
-    @ObservedObject var movies = DataMovies()
-    let genres = DataGenres()
+    @ObservedObject var movies: DataMovies
     
-    init() {
+    init(genreID: String = "") {
         UITableView.appearance().separatorColor = .clear
+        movies = DataMovies(genreID: genreID)
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(movies) { (movie: Movie) in
-                    ZStack {
-                        MoviesListItem(movie: movie, genres: self.genres)
-                            .onAppear() {
-                                self.movies.checkMoreMoviesToLoad(movie: movie)
-                        }
-                        NavigationLink(destination: MovieDetail(movie: movie)) {
-                            EmptyView()
-                        }
-                        .buttonStyle(PlainButtonStyle())
+        List {
+            ForEach(movies) { (movie: Movie) in
+                ZStack {
+                    MoviesListItem(movie: movie)
+                        .onAppear() {
+                            self.movies.checkMoreMoviesToLoad(movie: movie)
                     }
+                    NavigationLink(destination: MovieDetail(movie: movie)) {
+                        EmptyView()
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
-            .navigationBarTitle(Text("Moment"))
         }
     }
+    
 }
 
 struct MoviesList_Previews: PreviewProvider {

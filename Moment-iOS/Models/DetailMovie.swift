@@ -8,28 +8,28 @@
 
 import Foundation
 
-class ProductionCountries: Codable {
-    var iso_3166_1: String = ""
-    var name: String = ""
-}
-
-class DetailMovie: Codable, Identifiable { //Identifiable ? class ? //Codable
-    var id: Int
-    var budget: Int
-    var overview: String
-    var production_countries: [ProductionCountries]
-    var release_date: String
-    var vote_average: Double
-    
-    init(id: Int = 0, budget: Int = 0, overview: String = "", production_countries: [ProductionCountries] = [], release_date: String = "", vote_average: Double = 0.0) {
-        self.id = id
-        self.budget = budget
-        self.overview = overview
-        self.production_countries = production_countries
-        self.release_date = release_date
-        self.vote_average = vote_average
-    }
-}
+//class ProductionCountries: Codable {
+//    var iso_3166_1: String = ""
+//    var name: String = ""
+//}
+//
+//class DetailMovie: Codable, Identifiable { //Identifiable ? class ? //Codable
+//    var id: Int
+//    var budget: Int
+//    var overview: String
+//    var production_countries: [ProductionCountries]
+//    var release_date: String
+//    var vote_average: Double
+//
+//    init(id: Int = 0, budget: Int = 0, overview: String = "", production_countries: [ProductionCountries] = [], release_date: String = "", vote_average: Double = 0.0) {
+//        self.id = id
+//        self.budget = budget
+//        self.overview = overview
+//        self.production_countries = production_countries
+//        self.release_date = release_date
+//        self.vote_average = vote_average
+//    }
+//}
 
 class DetailMovieCast: Codable, Identifiable {
     var id: Int = 0

@@ -77,8 +77,7 @@ struct MovieDetail: View {
                     Text(movie.overview)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-                .frame(width: 380, alignment: .leading)
-                .padding(.top)
+                .padding()
 
                 Spacer()
             }
