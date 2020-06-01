@@ -15,18 +15,24 @@ struct MoviesListItem: View {
     var body: some View {
         ZStack {
             HStack(spacing: 0) {
-                KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(movie.poster_path ?? "test")")!) // a modifier
-                    .resizable()
-                    .cornerRadius(10)
-                    .scaledToFit()
-                    .frame(width: 100.0,height:100)
-                    .shadow(radius: 10)
+                KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(movie.poster_path)"))
+                    .placeholder {
+                        Image(systemName: "tv")
+                            .frame(width: 100.0, height: 100.0)
+                            .font(.largeTitle)
+                            .opacity(0.3)
+                }
+                .resizable()
+                .cornerRadius(10)
+                .scaledToFit()
+                .frame(width: 100.0,height:100)
+                .shadow(radius: 10)
                 
                 VStack(alignment: .leading) {
                     Text(movie.original_title)
                         .padding(.horizontal)
                         .font(.headline)
-
+                    
                     Text("🔥 \(self.movie.popularity, specifier: "%.2f")")
                         .font(.system(size: 12, weight: .regular))
                         .lineLimit(2)

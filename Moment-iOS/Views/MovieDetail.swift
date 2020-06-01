@@ -10,8 +10,8 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct MovieDetail: View {
-    let movie: Movie
     @ObservedObject var movieDetail: DataDetailsMovie
+    let movie: Movie
     
     init(movie: Movie) {
         self.movie = movie
@@ -23,13 +23,19 @@ struct MovieDetail: View {
             
             VStack {
                 
-                KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(movie.poster_path ?? "test")")!) // a modifier
-                    .resizable()
-                    .cornerRadius(10)
-                    .scaledToFit()
-                    .frame(width: 250.0,height:250)
-                    .shadow(radius: 10)
-                    .padding(.top)
+                KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(movie.poster_path )"))
+                    .placeholder {
+                        Image(systemName: "tv")
+                            .frame(width: 100.0, height: 100.0)
+                            .font(.largeTitle)
+                            .opacity(0.3)
+                }
+                .resizable()
+                .cornerRadius(10)
+                .scaledToFit()
+                .frame(width: 250.0,height:250)
+                .shadow(radius: 10)
+                .padding(.top)
                 
                 Text(movie.original_title)
                     .padding()
@@ -51,18 +57,17 @@ struct MovieDetail: View {
                                 .resizable()
                                 .scaledToFit()
                                 .cornerRadius(10)
-                                .frame(width: 150.0, height: 150.0)
+                                .frame(width: 125.0, height: 150.0)
                                 .shadow(radius: 10)
                                 .padding(.bottom)
                                 
                                 Text("\(detail.name)")
-                                    .frame(minWidth: 0, maxWidth: 150, minHeight: 0, maxHeight: 50)
                                     .multilineTextAlignment(.center)
                             }
                             
                         }
                     }
-                    .padding([.top, .bottom])
+                    .padding()
                     
                 }
                 
@@ -70,7 +75,7 @@ struct MovieDetail: View {
                     .padding([.leading, .trailing])
                 
                 VStack(alignment: .leading) {
-                    Text("Resume")
+                    Text("Overview")
                         .padding(.bottom)
                         .font(.title)
                     
@@ -78,7 +83,17 @@ struct MovieDetail: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .padding()
-
+                
+                VStack(alignment: .leading) {
+                    Text("Release date")
+                        .padding(.bottom)
+                        .font(.title)
+                    
+                    Text(movie.release_date)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
+                .padding()
+                
                 Spacer()
             }
         }

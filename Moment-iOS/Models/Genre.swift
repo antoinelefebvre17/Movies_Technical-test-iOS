@@ -8,11 +8,17 @@
 
 import Foundation
 
-struct Genre: Codable, Identifiable {
+class Genre: Codable, Identifiable {
     var id: Int
     var name: String
+    
+    required init(from decoder: Decoder) throws {
+        let keyedContainer = try decoder.container(keyedBy: CodingKeys.self)
+        id = try keyedContainer.decode(Int.self, forKey: .id)
+        name = try keyedContainer.decodeIfPresent(String.self, forKey: .name) ?? "No genre"
+    }
 }
 
-struct Genres: Codable {
+class Genres: Codable {
     var genres: [Genre]
 }
