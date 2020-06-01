@@ -12,10 +12,15 @@ class Genre: Codable, Identifiable {
     var id: Int
     var name: String
     
+    init(id: Int, name: String) {
+        self.id = id
+        self.name = name
+    }
+    
     required init(from decoder: Decoder) throws {
         let keyedContainer = try decoder.container(keyedBy: CodingKeys.self)
-        id = try keyedContainer.decode(Int.self, forKey: .id)
-        name = try keyedContainer.decodeIfPresent(String.self, forKey: .name) ?? "No genre"
+        self.id = try keyedContainer.decode(Int.self, forKey: .id)
+        self.name = try keyedContainer.decodeIfPresent(String.self, forKey: .name) ?? "No genre"
     }
 }
 

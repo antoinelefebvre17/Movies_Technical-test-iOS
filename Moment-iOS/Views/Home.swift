@@ -20,8 +20,10 @@ struct Home: View {
             VStack {
                 GenresList(genres: self.genres.genres)
                     .padding([.top, .leading, .trailing])
+                
                 Divider()
                     .padding()
+                
                 MoviesList()
                     .navigationBarTitle(Text("Popular movies"))
             }
@@ -30,8 +32,8 @@ struct Home: View {
     }
 }
 
-//struct MoviesHome_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MoviesHome()
-//    }
-//}
+struct MoviesHome_Previews: PreviewProvider {
+    static var previews: some View {
+        Home()
+    }
+}

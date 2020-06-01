@@ -10,91 +10,67 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct MovieDetail: View {
-    @ObservedObject var dataDetailMovie: DataDetailsMovie
+    @ObservedObject var dataDetailMovie: DataCastMovie
     let movie: Movie
     
     init(movie: Movie) {
         self.movie = movie
-        self.dataDetailMovie = DataDetailsMovie(idMovie: self.movie.id)
+        self.dataDetailMovie = DataCastMovie(idMovie: self.movie.id)
     }
     
     var body: some View {
         ScrollView {
-            
             VStack {
-                
-                KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(movie.poster_path )"))
-                    .placeholder {
-                        Image(systemName: "tv")
-                            .frame(width: 100.0, height: 100.0)
-                            .font(.largeTitle)
-                            .opacity(0.3)
-                }
-                .resizable()
-                .cornerRadius(10)
-                .scaledToFit()
-                .frame(width: 250.0,height:250)
-                .shadow(radius: 10)
-                .padding(.top)
-                
-                Text(movie.original_title)
-                    .padding()
-                    .font(.system(size: 25, weight: .bold, design: .default))
-                    .multilineTextAlignment(.center)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        ForEach(self.dataDetailMovie.detailsMovie) { detail in
-                            VStack {
-                                
-                                KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(detail.profile_path)"))
-                                    .placeholder {
-                                        Image(systemName: "person.crop.circle")
-                                            .frame(width: 100.0, height: 100.0)
-                                            .font(.largeTitle)
-                                            .opacity(0.3)
-                                }
-                                .resizable()
-                                .scaledToFit()
-                                .cornerRadius(10)
-                                .frame(width: 125.0, height: 150.0)
-                                .shadow(radius: 10)
-                                .padding(.bottom)
-                                
-                                Text("\(detail.name)")
-                                    .multilineTextAlignment(.center)
-                            }
-                            
-                        }
+                VStack {
+                    KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(movie.poster_path )"))
+                        .placeholder {
+                            Image(systemName: "tv")
+                                .frame(width: 100.0, height: 100.0)
+                                .font(.largeTitle)
+                                .opacity(0.3)
                     }
-                    .padding()
+                    .resizable()
+                    .cornerRadius(10)
+                    .scaledToFit()
+                    .frame(width: 250.0,height:250)
+                    .shadow(radius: 10)
+                    .padding(.top)
+                    
+                    Text(movie.original_title)
+                        .padding(.top)
+                        .font(.system(size: 25, weight: .bold, design: .default))
+                        .multilineTextAlignment(.center)
+                    
+                    ActorsList(datilsMovie: dataDetailMovie.castMovie)
+                        .padding(.bottom)
                     
                 }
                 
                 Divider()
                     .padding([.leading, .trailing])
                 
-                VStack(alignment: .leading) {
-                    Text("Overview")
-                        .padding(.bottom)
-                        .font(.title)
+                VStack {
+                    VStack(alignment: .leading) {
+                        Text("Overview")
+                            .padding(.bottom)
+                            .font(.title)
+                        
+                        Text(movie.overview)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .padding()
                     
-                    Text(movie.overview)
-                        .fixedSize(horizontal: false, vertical: true)
+                    VStack(alignment: .leading) {
+                        Text("Release date")
+                            .padding(.bottom)
+                            .font(.title)
+                        
+                        Text(movie.release_date)
+                    }
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
+                    .padding()
                 }
-                .padding()
                 
-                VStack(alignment: .leading) {
-                    Text("Release date")
-                        .padding(.bottom)
-                        .font(.title)
-                    
-                    Text(movie.release_date)
-                }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
-                .padding()
-                
-                Spacer()
             }
         }
     }
@@ -103,6 +79,6 @@ struct MovieDetail: View {
 
 struct MovieDetail_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetail(movie: Movie(id: 419704, popularity: 100.0, poster_path: "cJ0wqaQ9KPzs3fROXUuaWgRg9Pj.jpg", original_title: "Ad Astrfztgzfdrtgzrdfsga", genre_ids: [1, 2], overview: "Resume", release_date: "17/05/1998"))
+        MovieDetail(movie: Movie(id: 419704, popularity: 100.0, poster_path: "cJ0wqaQ9KPzs3fROXUuaWgRg9Pj.jpg", original_title: "Ad Astra", genre_ids: [1, 2], overview: "Resume", release_date: "17/05/1998"))
     }
 }

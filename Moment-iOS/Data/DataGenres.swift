@@ -29,9 +29,11 @@ class DataGenres: ObservableObject {
                 print(error)
                 return
             }
+            
             guard let parseGenres = Tools().parsJson(data: data, test: Genres.self) else {
                 return
             }
+            
             DispatchQueue.main.async {
                 self.genres.append(contentsOf: parseGenres.genres)
             }

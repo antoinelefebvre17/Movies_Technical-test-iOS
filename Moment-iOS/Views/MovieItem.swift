@@ -46,14 +46,15 @@ struct MovieItem: View {
                     
                 }
                 .padding(.top)
+                
                 Spacer()
             }
         }
     }
 }
 
-//struct MoviesListItem_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MoviesListItem(movie: Movie(id: 1, popularity: 100.0, poster_path: "cJ0wqaQ9KPzs3fROXUuaWgRg9Pj.jpg", original_title: "Ad Astrfztgzfdrtgzrdfsga", genre_ids: [1, 2], overview: "Resume", release_date: "17/05/1998"))
-//    }
-//}
+struct MoviesListItem_Previews: PreviewProvider {
+    static var previews: some View {
+        MovieItem(movie: Movie(id: 419704, popularity: 100.0, poster_path: "cJ0wqaQ9KPzs3fROXUuaWgRg9Pj.jpg", original_title: "Ad Astra", genre_ids: [1, 2], overview: "Resume", release_date: "17/05/1998"))
+    }
+}

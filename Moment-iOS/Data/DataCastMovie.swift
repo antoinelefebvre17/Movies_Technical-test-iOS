@@ -9,13 +9,13 @@
 import Foundation
 
 class DataCastMovie: ObservableObject {
-    @Published var detailsMovie = [MovieActor]()
+    @Published var castMovie = [MovieActor]()
     
     init(idMovie: Int) {
-        loadDetailsMoovieFromAPI(idMovie: idMovie)
+        loadCastMoovieFromAPI(idMovie: idMovie)
     }
     
-    func loadDetailsMoovieFromAPI(idMovie: Int) {
+    func loadCastMoovieFromAPI(idMovie: Int) {
         let urlTMDBP = "https://api.themoviedb.org/3/movie/\(idMovie)/credits?api_key=cd827015dfa90cce9c7ef02bef8a254d"
         let url = URL(string: urlTMDBP)!
         
@@ -29,12 +29,13 @@ class DataCastMovie: ObservableObject {
                 print(error)
                 return
             }
-            guard let parseDetailsMovies = Tools().parsJson(data: data, test: MovieCast.self) else {
+            
+            guard let parseCastMovie = Tools().parsJson(data: data, test: MovieCast.self) else {
                 return
             }
             
             DispatchQueue.main.async {
-                self.detailsMovie.append(contentsOf: parseDetailsMovies.cast)
+                self.castMovie.append(contentsOf: parseCastMovie.cast)
             }
             
         }

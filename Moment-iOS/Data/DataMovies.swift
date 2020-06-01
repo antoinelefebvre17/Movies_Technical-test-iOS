@@ -39,9 +39,11 @@ class DataMovies: ObservableObject, RandomAccessCollection {
                 print(error)
                 return
             }
+            
             guard let parseMovies = Tools().parsJson(data: data, test: Movies.self) else {
                 return
             }
+            
             DispatchQueue.main.async {
                 self.movies.append(contentsOf: parseMovies.results)
             }

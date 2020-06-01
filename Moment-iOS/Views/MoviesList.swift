@@ -24,6 +24,7 @@ struct MoviesList: View {
                         .onAppear() {
                             self.dataMovies.checkMoreMoviesToLoad(movie: movie)
                     }
+                    
                     NavigationLink(destination: MovieDetail(movie: movie)) {
                         EmptyView()
                     }
