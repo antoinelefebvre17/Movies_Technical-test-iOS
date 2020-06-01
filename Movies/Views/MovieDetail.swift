@@ -37,7 +37,8 @@ struct MovieDetail: View {
                     .padding(.top)
                     
                     Text(movie.original_title)
-                        .padding(.top)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding([.leading, .bottom, .trailing])
                         .font(.system(size: 25, weight: .bold, design: .default))
                         .multilineTextAlignment(.center)
                     
@@ -58,7 +59,8 @@ struct MovieDetail: View {
                         Text(movie.overview)
                             .fixedSize(horizontal: false, vertical: true)
                     }
-                    .padding()
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding([.leading, .trailing])
                     
                     VStack(alignment: .leading) {
                         Text("Release date")
