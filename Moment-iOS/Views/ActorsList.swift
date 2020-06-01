@@ -10,16 +10,16 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct ActorsList: View {
-    let detailsMovie: [MovieActor]
+    let castMovie: [MovieActor]
     
     init(datilsMovie: [MovieActor]) {
-        self.detailsMovie = datilsMovie
+        self.castMovie = datilsMovie
     }
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 20) {
-                ForEach(self.detailsMovie) { detail in
+                ForEach(self.castMovie) { detail in
                     VStack {
                         KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(detail.profile_path)"))
                             .placeholder {

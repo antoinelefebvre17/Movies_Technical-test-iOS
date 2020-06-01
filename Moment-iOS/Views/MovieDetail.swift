@@ -10,12 +10,12 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct MovieDetail: View {
-    @ObservedObject var dataDetailMovie: DataCastMovie
+    @ObservedObject var dataCastMovie: DataCastMovie
     let movie: Movie
     
     init(movie: Movie) {
         self.movie = movie
-        self.dataDetailMovie = DataCastMovie(idMovie: self.movie.id)
+        self.dataCastMovie = DataCastMovie(idMovie: self.movie.id)
     }
     
     var body: some View {
@@ -41,7 +41,7 @@ struct MovieDetail: View {
                         .font(.system(size: 25, weight: .bold, design: .default))
                         .multilineTextAlignment(.center)
                     
-                    ActorsList(datilsMovie: dataDetailMovie.castMovie)
+                    ActorsList(datilsMovie: dataCastMovie.castMovie)
                         .padding(.bottom)
                     
                 }
