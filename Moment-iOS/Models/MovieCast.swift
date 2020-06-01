@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DetailMovieCast: Codable, Identifiable {
+class MovieCast: Codable, Identifiable {
     var id: Int
     var name: String
     var profile_path: String
@@ -21,6 +21,6 @@ class DetailMovieCast: Codable, Identifiable {
     }
 }
 
-class DetailMovieCasts: Codable {
-    var cast: [DetailMovieCast]
+class MovieCasts: Codable {
+    var cast: [MovieCast]
 }

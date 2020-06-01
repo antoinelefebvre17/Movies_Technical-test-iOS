@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct MoviesHome: View {
+struct Home: View {
     @ObservedObject var genres: DataGenres
     
     init() {

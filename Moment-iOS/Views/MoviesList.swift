@@ -9,20 +9,20 @@
 import SwiftUI
 
 struct MoviesList: View {
-    @ObservedObject var movies: DataMovies
+    @ObservedObject var dataMovies: DataMovies
     
-    init(genreID: String = "") {
+    init(idGenre: String = "") {
         UITableView.appearance().separatorColor = .clear
-        movies = DataMovies(genreID: genreID)
+        dataMovies = DataMovies(idGenre: idGenre)
     }
     
     var body: some View {
         List {
-            ForEach(movies) { (movie: Movie) in
+            ForEach(dataMovies) { (movie: Movie) in
                 ZStack {
-                    MoviesListItem(movie: movie)
+                    MovieItem(movie: movie)
                         .onAppear() {
-                            self.movies.checkMoreMoviesToLoad(movie: movie)
+                            self.dataMovies.checkMoreMoviesToLoad(movie: movie)
                     }
                     NavigationLink(destination: MovieDetail(movie: movie)) {
                         EmptyView()

@@ -19,7 +19,7 @@ struct GenresList: View {
                     HStack {
                         ForEach(self.genres) { genre in
                             NavigationLink(destination: {
-                                MoviesList(genreID: String(genre.id))
+                                MoviesList(idGenre: String(genre.id))
                                     .navigationBarTitle(Text(genre.name))
                             }()) {
                                 Text("\(genre.name)")
@@ -35,7 +35,6 @@ struct GenresList: View {
             }
         }
     }
-    
 }
 
 

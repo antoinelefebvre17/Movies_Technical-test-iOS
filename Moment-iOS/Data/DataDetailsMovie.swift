@@ -9,14 +9,14 @@
 import Foundation
 
 class DataDetailsMovie: ObservableObject {
-    @Published var detailsMovie = [DetailMovieCast]()
+    @Published var detailsMovie = [MovieCast]()
     
-    init(id: Int) {
-        loadDetailsMoovieFromAPI(id: id)
+    init(idMovie: Int) {
+        loadDetailsMoovieFromAPI(idMovie: idMovie)
     }
     
-    func loadDetailsMoovieFromAPI(id: Int) {
-        let urlTMDBP = "https://api.themoviedb.org/3/movie/\(id)/credits?api_key=cd827015dfa90cce9c7ef02bef8a254d"
+    func loadDetailsMoovieFromAPI(idMovie: Int) {
+        let urlTMDBP = "https://api.themoviedb.org/3/movie/\(idMovie)/credits?api_key=cd827015dfa90cce9c7ef02bef8a254d"
         let url = URL(string: urlTMDBP)!
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -29,7 +29,7 @@ class DataDetailsMovie: ObservableObject {
                 print(error)
                 return
             }
-            guard let parseDetailsMovies = Tools().parsJson(data: data, test: DetailMovieCasts.self) else {
+            guard let parseDetailsMovies = Tools().parsJson(data: data, test: MovieCasts.self) else {
                 return
             }
             

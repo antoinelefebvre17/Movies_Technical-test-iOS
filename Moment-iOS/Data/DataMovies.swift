@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DataMovies: ObservableObject, RandomAccessCollection { //manage Data + inout pour loadDataFromAPI ?
+class DataMovies: ObservableObject, RandomAccessCollection {
     @Published var movies = [Movie]()
     
     var startIndex: Int { movies.startIndex }
@@ -17,16 +17,16 @@ class DataMovies: ObservableObject, RandomAccessCollection { //manage Data + ino
     
     var page = 1
     
-    init(genreID: String = "") {
-        loadMooviesFromAPI(genreID: genreID)
+    init(idGenre: String = "") {
+        loadMooviesFromAPI(idGenre: idGenre)
     }
     
     subscript(position: Int) -> Movie {
         return movies[position]
     }
     
-    func loadMooviesFromAPI(genreID: String = "") { // export function content of return datatask
-        let urlTMDB = "https://api.themoviedb.org/3/movie/popular?api_key=cd827015dfa90cce9c7ef02bef8a254d&language=en-US&page=\(page)&with_genres=\(genreID)"
+    func loadMooviesFromAPI(idGenre: String = "") {
+        let urlTMDB = "https://api.themoviedb.org/3/movie/popular?api_key=cd827015dfa90cce9c7ef02bef8a254d&language=en-US&page=\(page)&with_genres=\(idGenre)"
         let url = URL(string: urlTMDB)!
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -52,7 +52,7 @@ class DataMovies: ObservableObject, RandomAccessCollection { //manage Data + ino
     func checkMoreMoviesToLoad(genreID: String = "", movie: Movie) {
         if (movie === self.movies[self.movies.endIndex - 1]) {
             self.page += 1
-            loadMooviesFromAPI(genreID: genreID)
+            loadMooviesFromAPI(idGenre: genreID)
         }
     }
     

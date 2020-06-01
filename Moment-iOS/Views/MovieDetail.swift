@@ -10,12 +10,12 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct MovieDetail: View {
-    @ObservedObject var movieDetail: DataDetailsMovie
+    @ObservedObject var dataDetailMovie: DataDetailsMovie
     let movie: Movie
     
     init(movie: Movie) {
         self.movie = movie
-        self.movieDetail = DataDetailsMovie(id: self.movie.id)
+        self.dataDetailMovie = DataDetailsMovie(idMovie: self.movie.id)
     }
     
     var body: some View {
@@ -44,7 +44,7 @@ struct MovieDetail: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
-                        ForEach(self.movieDetail.detailsMovie) { detail in
+                        ForEach(self.dataDetailMovie.detailsMovie) { detail in
                             VStack {
                                 
                                 KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(detail.profile_path)"))

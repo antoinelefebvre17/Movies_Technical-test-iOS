@@ -9,7 +9,7 @@
 import SwiftUI
 import KingfisherSwiftUI
 
-struct MoviesListItem: View {
+struct MovieItem: View {
     let movie: Movie
     
     var body: some View {
