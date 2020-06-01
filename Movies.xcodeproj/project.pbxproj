@@ -10,6 +10,7 @@
 		6F1E859324830DEE00B18D85 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 6F1E859224830DEE00B18D85 /* KingfisherSwiftUI */; };
 		6F3071442485359F00C2A085 /* GenresList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3071432485359F00C2A085 /* GenresList.swift */; };
 		6F683D1824856F2F00296B6D /* ActorsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F683D1724856F2F00296B6D /* ActorsList.swift */; };
+		6F683D1A24858ED700296B6D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F683D1924858ED700296B6D /* Default-568h@2x.png */; };
 		6FA8DBE02484282400A6232E /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA8DBDF2484282400A6232E /* Tools.swift */; };
 		6FA8DBE324844B8300A6232E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA8DBE224844B8300A6232E /* Movie.swift */; };
 		6FA8DBE524844BB500A6232E /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA8DBE424844BB500A6232E /* Genre.swift */; };
@@ -32,13 +33,14 @@
 /* Begin PBXFileReference section */
 		6F3071432485359F00C2A085 /* GenresList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresList.swift; sourceTree = "<group>"; };
 		6F683D1724856F2F00296B6D /* ActorsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsList.swift; sourceTree = "<group>"; };
+		6F683D1924858ED700296B6D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6FA8DBDF2484282400A6232E /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		6FA8DBE224844B8300A6232E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		6FA8DBE424844BB500A6232E /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		6FA8DBE62484E9E100A6232E /* DataCastMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCastMovie.swift; sourceTree = "<group>"; };
 		6FA8DBE82484EA5D00A6232E /* MovieActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActor.swift; sourceTree = "<group>"; };
 		6FB4438B248550E2001AC3A7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		6FCC3400248252D700112FEB /* Moment-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moment-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FCC3400248252D700112FEB /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FCC3403248252D700112FEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FCC3405248252D700112FEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6FCC3407248252D700112FEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,7 +80,8 @@
 		6FCC33F7248252D700112FEB = {
 			isa = PBXGroup;
 			children = (
-				6FCC3402248252D700112FEB /* Moment-iOS */,
+				6F683D1924858ED700296B6D /* Default-568h@2x.png */,
+				6FCC3402248252D700112FEB /* Movies */,
 				6FCC3401248252D700112FEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,12 +89,12 @@
 		6FCC3401248252D700112FEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6FCC3400248252D700112FEB /* Moment-iOS.app */,
+				6FCC3400248252D700112FEB /* Movies.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6FCC3402248252D700112FEB /* Moment-iOS */ = {
+		6FCC3402248252D700112FEB /* Movies */ = {
 			isa = PBXGroup;
 			children = (
 				6FA8DBE124844B6B00A6232E /* Models */,
@@ -105,7 +108,7 @@
 				6FCC3411248252D700112FEB /* Info.plist */,
 				6FCC340B248252D700112FEB /* Preview Content */,
 			);
-			path = "Moment-iOS";
+			path = Movies;
 			sourceTree = "<group>";
 		};
 		6FCC340B248252D700112FEB /* Preview Content */ = {
@@ -143,9 +146,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6FCC33FF248252D700112FEB /* Moment-iOS */ = {
+		6FCC33FF248252D700112FEB /* Movies */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6FCC3414248252D700112FEB /* Build configuration list for PBXNativeTarget "Moment-iOS" */;
+			buildConfigurationList = 6FCC3414248252D700112FEB /* Build configuration list for PBXNativeTarget "Movies" */;
 			buildPhases = (
 				6FCC33FC248252D700112FEB /* Sources */,
 				6FCC33FD248252D700112FEB /* Frameworks */,
@@ -155,12 +158,12 @@
 			);
 			dependencies = (
 			);
-			name = "Moment-iOS";
+			name = Movies;
 			packageProductDependencies = (
 				6F1E859224830DEE00B18D85 /* KingfisherSwiftUI */,
 			);
 			productName = "Moment-iOS";
-			productReference = 6FCC3400248252D700112FEB /* Moment-iOS.app */;
+			productReference = 6FCC3400248252D700112FEB /* Movies.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +181,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6FCC33FB248252D700112FEB /* Build configuration list for PBXProject "Moment-iOS" */;
+			buildConfigurationList = 6FCC33FB248252D700112FEB /* Build configuration list for PBXProject "Movies" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -194,7 +197,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6FCC33FF248252D700112FEB /* Moment-iOS */,
+				6FCC33FF248252D700112FEB /* Movies */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FCC3410248252D700112FEB /* LaunchScreen.storyboard in Resources */,
+				6F683D1A24858ED700296B6D /* Default-568h@2x.png in Resources */,
 				6FCC340D248252D700112FEB /* Preview Assets.xcassets in Resources */,
 				6FCC340A248252D700112FEB /* Assets.xcassets in Resources */,
 			);
@@ -369,14 +373,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Moment-iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Movies/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Moment-iOS/Info.plist";
+				INFOPLIST_FILE = Movies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "antoine.Moment-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = antoine.Movies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -388,14 +392,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Moment-iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Movies/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Moment-iOS/Info.plist";
+				INFOPLIST_FILE = Movies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "antoine.Moment-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = antoine.Movies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -405,7 +409,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6FCC33FB248252D700112FEB /* Build configuration list for PBXProject "Moment-iOS" */ = {
+		6FCC33FB248252D700112FEB /* Build configuration list for PBXProject "Movies" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6FCC3412248252D700112FEB /* Debug */,
@@ -414,7 +418,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6FCC3414248252D700112FEB /* Build configuration list for PBXNativeTarget "Moment-iOS" */ = {
+		6FCC3414248252D700112FEB /* Build configuration list for PBXNativeTarget "Movies" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6FCC3415248252D700112FEB /* Debug */,

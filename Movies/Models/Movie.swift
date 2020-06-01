@@ -1,6 +1,6 @@
 //
 //  Movie.swift
-//  Moment-iOS
+//  Movies
 //
 //  Created by Antoine Lefebvre on 31/05/2020.
 //  Copyright © 2020 Antoine Lefebvre. All rights reserved.
