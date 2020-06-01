@@ -2,14 +2,14 @@
 
 This technical test consists of creating a popular iOS movie listing Swift application (data from The Movie DB API).
 
+## Subject
+Subject about the technical test (in French) - [Subject](https://drive.google.com/file/d/1W7FH9xVkuFwl6limjkTbnFlsDxe7aX1N/view?usp=sharing)
+
 ## Dependency
 
 ### Kingfisher (KingfisherSwiftUI package)
 
 Easily load images on SwiftUI - [See the GitHub](https://github.com/onevcat/Kingfisher)
-
-## Subject
-Subject about the technical test (in French) - [Subject](https://drive.google.com/file/d/1W7FH9xVkuFwl6limjkTbnFlsDxe7aX1N/view?usp=sharing)
 
 ## Screens
 
