@@ -10,7 +10,6 @@
 		6F1E859324830DEE00B18D85 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 6F1E859224830DEE00B18D85 /* KingfisherSwiftUI */; };
 		6F3071442485359F00C2A085 /* GenresList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3071432485359F00C2A085 /* GenresList.swift */; };
 		6F683D1824856F2F00296B6D /* ActorsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F683D1724856F2F00296B6D /* ActorsList.swift */; };
-		6F683D1A24858ED700296B6D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F683D1924858ED700296B6D /* Default-568h@2x.png */; };
 		6FA8DBE02484282400A6232E /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA8DBDF2484282400A6232E /* Tools.swift */; };
 		6FA8DBE324844B8300A6232E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA8DBE224844B8300A6232E /* Movie.swift */; };
 		6FA8DBE524844BB500A6232E /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA8DBE424844BB500A6232E /* Genre.swift */; };
@@ -33,7 +32,6 @@
 /* Begin PBXFileReference section */
 		6F3071432485359F00C2A085 /* GenresList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresList.swift; sourceTree = "<group>"; };
 		6F683D1724856F2F00296B6D /* ActorsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsList.swift; sourceTree = "<group>"; };
-		6F683D1924858ED700296B6D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6FA8DBDF2484282400A6232E /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		6FA8DBE224844B8300A6232E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		6FA8DBE424844BB500A6232E /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 		6FCC33F7248252D700112FEB = {
 			isa = PBXGroup;
 			children = (
-				6F683D1924858ED700296B6D /* Default-568h@2x.png */,
 				6FCC3402248252D700112FEB /* Movies */,
 				6FCC3401248252D700112FEB /* Products */,
 			);
@@ -208,7 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FCC3410248252D700112FEB /* LaunchScreen.storyboard in Resources */,
-				6F683D1A24858ED700296B6D /* Default-568h@2x.png in Resources */,
 				6FCC340D248252D700112FEB /* Preview Assets.xcassets in Resources */,
 				6FCC340A248252D700112FEB /* Assets.xcassets in Resources */,
 			);
