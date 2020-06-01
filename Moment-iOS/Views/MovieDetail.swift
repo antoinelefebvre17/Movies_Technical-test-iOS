@@ -42,7 +42,7 @@ struct MovieDetail: View {
                         .multilineTextAlignment(.center)
                     
                     ActorsList(datilsMovie: dataCastMovie.castMovie)
-                        .padding(.bottom)
+                        .padding([.leading, .bottom])
                     
                 }
                 
