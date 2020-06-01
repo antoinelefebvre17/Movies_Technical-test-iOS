@@ -15,7 +15,6 @@ class DataMovies: ObservableObject, RandomAccessCollection { //manage Data + ino
     var startIndex: Int { movies.startIndex }
     var endIndex: Int { movies.endIndex }
     
-    let urlTMDB = "https://api.themoviedb.org/3/movie/popular?api_key=cd827015dfa90cce9c7ef02bef8a254d&language=fr&page=&with_genres="
     var page = 1
     
     init(genreID: String = "") {
@@ -27,8 +26,9 @@ class DataMovies: ObservableObject, RandomAccessCollection { //manage Data + ino
     }
     
     func loadMooviesFromAPI(genreID: String = "") { // export function content of return datatask
-        let urlTMDB = "https://api.themoviedb.org/3/movie/popular?api_key=cd827015dfa90cce9c7ef02bef8a254d&language=fr&page=\(page)&with_genres=\(genreID)"
+        let urlTMDB = "https://api.themoviedb.org/3/movie/popular?api_key=cd827015dfa90cce9c7ef02bef8a254d&language=en-US&page=\(page)&with_genres=\(genreID)"
         let url = URL(string: urlTMDB)!
+        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
                 print ("no data")

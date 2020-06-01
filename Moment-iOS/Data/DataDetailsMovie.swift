@@ -12,12 +12,13 @@ class DataDetailsMovie: ObservableObject {
     @Published var detailsMovie = [DetailMovieCast]()
     
     init(id: Int) {
-        loadMooviesFromAPI(id: id)
+        loadDetailsMoovieFromAPI(id: id)
     }
     
-    func loadMooviesFromAPI(id: Int) {
-        let urlTMDBPage = "https://api.themoviedb.org/3/movie/\(id)/credits?api_key=cd827015dfa90cce9c7ef02bef8a254d"
-        let url = URL(string: urlTMDBPage)!
+    func loadDetailsMoovieFromAPI(id: Int) {
+        let urlTMDBP = "https://api.themoviedb.org/3/movie/\(id)/credits?api_key=cd827015dfa90cce9c7ef02bef8a254d"
+        let url = URL(string: urlTMDBP)!
+        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
                 print ("no data")

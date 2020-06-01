@@ -26,18 +26,16 @@ struct MoviesListItem: View {
                     Text(movie.original_title)
                         .padding(.horizontal)
                         .font(.headline)
-                    //                HStack {
-                    //                    ForEach(movie.genre_ids, id: \.self) { genres in
-                    //                        Text("\(self.genres.returnNameGenreById(id: genres))")
-                    //                            .font(.system(size: 12, weight: .regular))
-                    //                            .lineLimit(2)
-                    //                            .foregroundColor(.white)
-                    //                            .padding(5)
-                    //                            .background(Color.green)
-                    //                            .cornerRadius(5)
-                    //                    }
-                    //                }
-                    //                .padding(.horizontal)
+
+                    Text("🔥 \(self.movie.popularity, specifier: "%.2f")")
+                        .font(.system(size: 12, weight: .regular))
+                        .lineLimit(2)
+                        .foregroundColor(.white)
+                        .padding(5)
+                        .background(Color.green)
+                        .cornerRadius(5)
+                        .padding(.horizontal)
+                    
                     Spacer()
                     
                 }

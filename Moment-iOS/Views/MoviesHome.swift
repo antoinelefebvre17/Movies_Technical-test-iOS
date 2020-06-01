@@ -23,7 +23,7 @@ struct MoviesHome: View {
                 Divider()
                     .padding()
                 MoviesList()
-                    .navigationBarTitle(Text("Home"))
+                    .navigationBarTitle(Text("Popular movies"))
             }
             
         }

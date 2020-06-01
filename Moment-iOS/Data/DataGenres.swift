@@ -16,8 +16,9 @@ class DataGenres: ObservableObject {
     }
     
     func loadGenresFromAPI() {
-        let urlTMDBPage = "https://api.themoviedb.org/3/genre/movie/list?api_key=cd827015dfa90cce9c7ef02bef8a254d&language=fr"
-        let url = URL(string: urlTMDBPage)!
+        let urlTMDBP = "https://api.themoviedb.org/3/genre/movie/list?api_key=cd827015dfa90cce9c7ef02bef8a254d&language=en-US"
+        let url = URL(string: urlTMDBP)!
+        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
                 print ("no data")
