@@ -26,7 +26,7 @@ class DataMovies: ObservableObject, RandomAccessCollection { //manage Data + ino
         return movies[position]
     }
     
-    func loadMooviesFromAPI() {
+    func loadMooviesFromAPI() { // export function content of return datatask
         let urlTMDBPage = "\(self.urlTMDB)\(page)"
         let url = URL(string: urlTMDBPage)!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
