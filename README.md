@@ -15,4 +15,4 @@ Subject about the technical test (in French) - [Subject](https://drive.google.co
 
 ![Screen 1](https://i.ibb.co/bvBrQ9f/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-06-01-at-22-37-00.png)
 ![Screen 2](https://i.ibb.co/qFYGNcZ/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-06-01-at-22-46-07.png)
-![Screen 3](https://i.ibb.co/HKvyJHm/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-06-01-at-22-46-36.png])
+![Screen 3](https://i.ibb.co/HKvyJHm/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-06-01-at-22-46-36.png)
