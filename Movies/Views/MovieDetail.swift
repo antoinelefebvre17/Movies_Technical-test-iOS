@@ -44,13 +44,12 @@ struct MovieDetail: View {
                     
                     ActorsList(datilsMovie: dataCastMovie.castMovie)
                         .padding([.leading, .bottom])
-                    
                 }
                 
                 Divider()
                     .padding([.leading, .trailing])
                 
-                VStack {
+                VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
                         Text("Overview")
                             .padding(.bottom)
@@ -59,7 +58,6 @@ struct MovieDetail: View {
                         Text(movie.overview)
                             .fixedSize(horizontal: false, vertical: true)
                     }
-                    .frame(minWidth: 0, maxWidth: .infinity)
                     .padding([.leading, .trailing])
                     
                     VStack(alignment: .leading) {
@@ -69,10 +67,8 @@ struct MovieDetail: View {
                         
                         Text(movie.release_date)
                     }
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
-                    .padding()
+                    .padding([.top, .leading, .trailing])
                 }
-                
             }
         }
     }
