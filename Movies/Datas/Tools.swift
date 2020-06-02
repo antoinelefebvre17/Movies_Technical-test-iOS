@@ -9,6 +9,9 @@
 import Foundation
 
 class Tools {
+    let apiKeyTMDB = "cd827015dfa90cce9c7ef02bef8a254d" /// create TMDB API key: https://developers.themoviedb.org/3/getting-started/introduction
+    let apiLanguageTMDB = "en-US" /// manage language TMDB API: https://developers.themoviedb.org/3/getting-started/languages
+    
     public func parsJson<T: Decodable>(data:Data, test: T.Type) -> T? {
         var resultAPI: T
         do {

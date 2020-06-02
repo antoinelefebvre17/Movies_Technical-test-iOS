@@ -25,8 +25,9 @@ class DataMovies: ObservableObject, RandomAccessCollection {
         return movies[position]
     }
     
+    /// info TMDB API popelar movies: https://developers.themoviedb.org/3/movies/get-popular-movies
     func loadMooviesFromAPI(idGenre: String = "") {
-        let urlTMDB = "https://api.themoviedb.org/3/movie/popular?api_key=cd827015dfa90cce9c7ef02bef8a254d&language=en-US&page=\(page)&with_genres=\(idGenre)"
+        let urlTMDB = "https://api.themoviedb.org/3/movie/popular?api_key=\(Tools().apiKeyTMDB)&language=\(Tools().apiLanguageTMDB)&page=\(page)&with_genres=\(idGenre)"
         let url = URL(string: urlTMDB)!
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -51,6 +52,7 @@ class DataMovies: ObservableObject, RandomAccessCollection {
         task.resume()
     }
     
+    /// check if we need to load more movies
     func checkMoreMoviesToLoad(genreID: String = "", movie: Movie) {
         if (movie === self.movies[self.movies.endIndex - 1]) {
             self.page += 1

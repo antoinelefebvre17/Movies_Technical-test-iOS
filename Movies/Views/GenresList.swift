@@ -14,8 +14,7 @@ struct GenresList: View {
     var body: some View {
         VStack {
             if !self.genres.isEmpty {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    
+                ScrollView(.horizontal, showsIndicators: false) {          
                     HStack {
                         ForEach(self.genres) { genre in
                             NavigationLink(destination: {

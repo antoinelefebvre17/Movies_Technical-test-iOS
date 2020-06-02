@@ -19,6 +19,7 @@ class MovieActor: Codable, Identifiable {
         self.profile_path = profile_path
     }
     
+    /// helpful for JSONDecoder
     required init(from decoder: Decoder) throws {
         let keyedContainer = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try keyedContainer.decode(Int.self, forKey: .id)

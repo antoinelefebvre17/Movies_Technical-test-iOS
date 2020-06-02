@@ -15,8 +15,9 @@ class DataGenres: ObservableObject {
         loadGenresFromAPI()
     }
     
+    /// info TMDB API genres movies: https://developers.themoviedb.org/3/genres/get-movie-list
     func loadGenresFromAPI() {
-        let urlTMDBP = "https://api.themoviedb.org/3/genre/movie/list?api_key=cd827015dfa90cce9c7ef02bef8a254d&language=en-US"
+        let urlTMDBP = "https://api.themoviedb.org/3/genre/movie/list?api_key=\(Tools().apiKeyTMDB)&language=\(Tools().apiLanguageTMDB)"
         let url = URL(string: urlTMDBP)!
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -39,17 +40,5 @@ class DataGenres: ObservableObject {
             }
         }
         task.resume()
-    }
-    
-    func returnNameGenreById(id: Int) -> String {
-        let indexFound = self.genres.firstIndex {
-            $0.id == id
-        }
-        
-        guard let index = indexFound else {
-            return "Category no found"
-        }
-        
-        return genres[index].name
     }
 }

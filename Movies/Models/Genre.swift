@@ -17,6 +17,7 @@ class Genre: Codable, Identifiable {
         self.name = name
     }
     
+    /// helpful for JSONDecoder
     required init(from decoder: Decoder) throws {
         let keyedContainer = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try keyedContainer.decode(Int.self, forKey: .id)

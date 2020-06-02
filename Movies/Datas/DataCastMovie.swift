@@ -15,8 +15,9 @@ class DataCastMovie: ObservableObject {
         loadCastMoovieFromAPI(idMovie: idMovie)
     }
     
+    /// info TMDB API credits movies: https://developers.themoviedb.org/3/movies/get-movie-credits
     func loadCastMoovieFromAPI(idMovie: Int) {
-        let urlTMDBP = "https://api.themoviedb.org/3/movie/\(idMovie)/credits?api_key=cd827015dfa90cce9c7ef02bef8a254d"
+        let urlTMDBP = "https://api.themoviedb.org/3/movie/\(idMovie)/credits?api_key=\(Tools().apiKeyTMDB)"
         let url = URL(string: urlTMDBP)!
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in

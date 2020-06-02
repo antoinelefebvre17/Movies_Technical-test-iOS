@@ -27,6 +27,7 @@ class Movie: Codable, Identifiable { //Identifiable ? class ? //Codable
         self.release_date = release_date
     }
     
+    /// helpful for JSONDecoder
     required init(from decoder: Decoder) throws {
         let keyedContainer = try decoder.container(keyedBy: CodingKeys.self)
         id = try keyedContainer.decode(Int.self, forKey: .id)

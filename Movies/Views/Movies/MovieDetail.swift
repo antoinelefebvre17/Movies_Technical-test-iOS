@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import KingfisherSwiftUI
 
 struct MovieDetail: View {
     @ObservedObject var dataCastMovie: DataCastMovie
@@ -27,7 +26,6 @@ struct MovieDetail: View {
                         .scaledToFit()
                         .frame(width: 250.0,height:250)
                         .shadow(radius: 10)
-                        .padding(.top)
                     
                     Text(movie.original_title)
                         .fixedSize(horizontal: false, vertical: true)
@@ -36,8 +34,9 @@ struct MovieDetail: View {
                         .multilineTextAlignment(.center)
                     
                     ActorsList(datilsMovie: dataCastMovie.castMovie)
-                        .padding([.leading, .bottom])
+                        .padding(.leading)
                 }
+                .padding([.top, .bottom])
                 
                 Divider()
                     .padding([.leading, .trailing])
@@ -62,6 +61,7 @@ struct MovieDetail: View {
                     }
                     .padding([.top, .leading, .trailing])
                 }
+                .padding(.bottom)
             }
         }
     }

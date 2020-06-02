@@ -21,13 +21,6 @@ struct MoviePoster: View {
                     .opacity(0.3)
         }
         .resizable()
-        
-        //        .resizable()
-        //        .cornerRadius(10)
-        //        .scaledToFit()
-        //        .frame(width: 250.0,height:250)
-        //        .shadow(radius: 10)
-        //        .padding(.top)
     }
 }
 
