@@ -22,19 +22,12 @@ struct MovieDetail: View {
         ScrollView {
             VStack {
                 VStack {
-                    KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(movie.poster_path )"))
-                        .placeholder {
-                            Image(systemName: "tv")
-                                .frame(width: 100.0, height: 100.0)
-                                .font(.largeTitle)
-                                .opacity(0.3)
-                    }
-                    .resizable()
-                    .cornerRadius(10)
-                    .scaledToFit()
-                    .frame(width: 250.0,height:250)
-                    .shadow(radius: 10)
-                    .padding(.top)
+                    MoviePoster(urlMoviePoster: movie.poster_path)
+                        .cornerRadius(10)
+                        .scaledToFit()
+                        .frame(width: 250.0,height:250)
+                        .shadow(radius: 10)
+                        .padding(.top)
                     
                     Text(movie.original_title)
                         .fixedSize(horizontal: false, vertical: true)

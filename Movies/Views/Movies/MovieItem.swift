@@ -15,18 +15,11 @@ struct MovieItem: View {
     var body: some View {
         ZStack {
             HStack(spacing: 0) {
-                KFImage(URL(string: "https://image.tmdb.org/t/p/w200/\(movie.poster_path)"))
-                    .placeholder {
-                        Image(systemName: "tv")
-                            .frame(width: 100.0, height: 100.0)
-                            .font(.largeTitle)
-                            .opacity(0.3)
-                }
-                .resizable()
-                .cornerRadius(10)
-                .scaledToFit()
-                .frame(width: 100.0,height:100)
-                .shadow(radius: 10)
+                MoviePoster(urlMoviePoster: movie.poster_path)
+                    .cornerRadius(10)
+                    .scaledToFit()
+                    .frame(width: 100.0,height:100)
+                    .shadow(radius: 10)
                 
                 VStack(alignment: .leading) {
                     Text(movie.original_title)
