@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Movie: Codable, Identifiable { //Identifiable ? class ? //Codable
+class Movie: Codable, Identifiable {
     var id: Int
     var popularity: Double
     var poster_path: String
